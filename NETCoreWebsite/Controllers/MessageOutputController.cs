@@ -30,16 +30,21 @@ namespace NETCoreWebsite.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("htmlPage")]
-        public string GetHTML()
+        public IActionResult GetHTML()
         {
-            return @"<article>
+            var content = @"<article>
 <header>
 <h1>Most important heading here</h1>
-<h3>Less important heading here</h3>
+<h3>Less important heading here</h3>asdf
 <p>Some additional information here</p>
 </header>
 <p>Lorem Ipsum dolor set amet....</p>
 </article>";
+            return new ContentResult()
+            {
+                Content = content,
+                ContentType = "text/html"
+            };
         }
 
         // POST: api/MessageOutput
