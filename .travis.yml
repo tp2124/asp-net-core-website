@@ -5,3 +5,10 @@ solution: NetCoreWebsite.sln
 script:
   - dotnet build
   - dotnet test
+
+notifications:
+  email:
+    recipients:
+      - tp2124@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
